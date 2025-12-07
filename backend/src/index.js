@@ -26,9 +26,9 @@ app.use("/api/auth",authRoutes)
 app.use("/api/messages",messageRoutes)
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.join(__dirname, "/frontend/Charcha/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/Charcha/dist")));
   app.get("/{*splat}", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "Charcha", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../frontend/Charcha/dist/index.html"));
   });
 }
 
