@@ -27,7 +27,7 @@ app.use("/api/messages",messageRoutes)
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join(__dirname, "/frontend/Charcha/dist")));
-  app.get("*", (req, res) => {
+  app.get("/{*splat}", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "Charcha", "dist", "index.html"));
   });
 }
